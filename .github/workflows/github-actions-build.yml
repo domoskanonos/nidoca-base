@@ -26,8 +26,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-            token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
+          token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
       - run: git config --global user.name 'Dominik Bruhn'
       - run: git config --global user.email 'domoskanonos@googlemail.com'
       - run: npm version patch -m "[RELEASE] %s"
       - run: git push
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
