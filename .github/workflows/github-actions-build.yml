@@ -31,6 +31,6 @@ jobs:
       - run: git config --global user.email 'domoskanonos@googlemail.com'
       - run: npm version patch -m "[RELEASE] %s"
       - run: git push
-      - uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
+      - run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
