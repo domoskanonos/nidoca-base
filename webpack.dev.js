@@ -4,18 +4,12 @@ const CopyPlugin = require('copy-webpack-plugin');
 module.exports = {
   target: 'web',
   entry: {
-    /**
-     * webpack-dev-server überwacht den Code von diesem Einstiegspunkt aus
-     * und kompiliert den Code neu, sobald Änderungen gemacht werden.
-     * In diesem Fall ist der Haupteinstigespunkt die index.ts Datei unseres Blueprints.
-     */
-    main: './src/app/index.ts',
+    main: './src/index.ts',
   },
   devServer: {
     port: 8080,
   },
   resolve: {
-    // Informiere Webpack darüber, welche Dateien für den Bundle-Prozess berücksichigt werden sollen.
     extensions: ['.ts', '.js', 'css'],
   },
   performance: {
@@ -32,12 +26,9 @@ module.exports = {
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin({template: './src/app/index.html'}),
+    new HtmlWebpackPlugin({template: './src/index.html'}),
     new CopyPlugin({
-      patterns: [
-        {from: 'src/nidoca.css', to: 'nidoca.css'},
-        {from: 'src/logo.svg', to: 'logo.svg'},
-      ],
+      patterns: [{from: 'src/main.css', to: 'main.css'}],
     }),
   ],
 };
