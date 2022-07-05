@@ -2,7 +2,7 @@
   "name": "@domoskanonos/nidoca-base",
   "version": "1.0.6",
   "license": "MIT",
-  "type":"module",
+  "type": "module",
   "keywords": [
     "basic typescript / webcomponent project"
   ],
@@ -18,7 +18,7 @@
     "start": "webpack serve --config webpack.local.js",
     "ts": "tsc -p ./",
     "prettier-check": "npx prettier --check \"./**/*.{ts,json,js,html}\"",
-    "prettier-write": "npx prettier --write \"./**/*.{ts,json,js,html}\"",
+    "prettier-fix": "npx prettier --write \"./**/*.{ts,json,js,html}\"",
     "eslint": "eslint src",
     "eslint:fix": "eslint src --fix",
     "test": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js --coverage --passWithNoTests",
