@@ -1,60 +1,60 @@
 {
-  "schemaVersion": "1.0.0",
-  "readme": "",
-  "modules": [
-    {
-      "kind": "javascript-module",
-      "path": "webpack.dev.js",
-      "declarations": [],
-      "exports": []
-    },
-    {
-      "kind": "javascript-module",
-      "path": "webpack.js",
-      "declarations": [],
-      "exports": []
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/index.ts",
-      "declarations": [],
-      "exports": []
-    },
-    {
-      "kind": "javascript-module",
-      "path": "coverage/lcov-report/block-navigation.js",
-      "declarations": [],
-      "exports": []
-    },
-    {
-      "kind": "javascript-module",
-      "path": "coverage/lcov-report/prettify.js",
-      "declarations": [],
-      "exports": []
-    },
-    {
-      "kind": "javascript-module",
-      "path": "coverage/lcov-report/sorter.js",
-      "declarations": [],
-      "exports": []
-    },
-    {
-      "kind": "javascript-module",
-      "path": "public/lib/index.js",
-      "declarations": [],
-      "exports": []
-    },
-    {
-      "kind": "javascript-module",
-      "path": "public/webcomponents/typedocs/assets/main.js",
-      "declarations": [],
-      "exports": []
-    },
-    {
-      "kind": "javascript-module",
-      "path": "public/webcomponents/typedocs/assets/search.js",
-      "declarations": [],
-      "exports": []
-    }
-  ]
+   "schemaVersion": "1.0.0",
+   "readme": "",
+   "modules": [
+      {
+         "kind": "javascript-module",
+         "path": "webpack.dev.js",
+         "declarations": [],
+         "exports": []
+      },
+      {
+         "kind": "javascript-module",
+         "path": "webpack.js",
+         "declarations": [],
+         "exports": []
+      },
+      {
+         "kind": "javascript-module",
+         "path": "src/index.ts",
+         "declarations": [],
+         "exports": []
+      },
+      {
+         "kind": "javascript-module",
+         "path": "coverage/lcov-report/block-navigation.js",
+         "declarations": [],
+         "exports": []
+      },
+      {
+         "kind": "javascript-module",
+         "path": "coverage/lcov-report/prettify.js",
+         "declarations": [],
+         "exports": []
+      },
+      {
+         "kind": "javascript-module",
+         "path": "coverage/lcov-report/sorter.js",
+         "declarations": [],
+         "exports": []
+      },
+      {
+         "kind": "javascript-module",
+         "path": "public/lib/index.js",
+         "declarations": [],
+         "exports": []
+      },
+      {
+         "kind": "javascript-module",
+         "path": "public/webcomponents/typedocs/assets/main.js",
+         "declarations": [],
+         "exports": []
+      },
+      {
+         "kind": "javascript-module",
+         "path": "public/webcomponents/typedocs/assets/search.js",
+         "declarations": [],
+         "exports": []
+      }
+   ]
 }
