@@ -25,12 +25,9 @@ jobs:
     if: github.ref == 'refs/heads/main'
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '16.x'
-          registry-url: 'https://registry.npmjs.org'
-      - run: npm run build
-      - uses: mikeal/merge-release@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
-          NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      with:
+          token: ${{ secrets.DEPLOY_TOKEN }}
+      - run: git config --global user.name 'AboutBits Tech'
+      - run: git config --global user.email 'tech@aboutbits.it'
+      - run: npm version patch -m "[RELEASE] %s"
+      - run: git push
