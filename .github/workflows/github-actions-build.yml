@@ -1,0 +1,38 @@
+name: build pipeline
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
+          registry-url: 'https://registry.npmjs.org'
+      - run: npm i
+      - run: npm run ts
+      - run: npm run prettier-check
+      - run: npm run eslint
+      - run: npm run lit-analyzer
+      - run: npm run cc
+      - run: npm run typedocs
+      - run: npm run test
+      - run: npm run docs-webcomponents
+  publish-npm:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
+          registry-url: 'https://registry.npmjs.org'
+      - run: npm run build
+      - uses: mikeal/merge-release@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
