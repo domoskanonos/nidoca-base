@@ -30,8 +30,7 @@
     "docs:watch": "typedoc --watch",
     "docs": "npm run lit-analyzer && npm run cc && npm run docs-webcomponents && npm run typedoc",
     "build-frontend": "webpack --config ./webpack.js",
-    "build": "npm i && npm run ts && npm run prettier-check && npm run eslint &&  npm run lit-analyzer && npm run test && npm run docs && npm run build-frontend",
-    "preversion": "npm run build"
+    "build": "npm i && npm run ts && npm run prettier-check && npm run eslint &&  npm run lit-analyzer && npm run test && npm run docs && npm run build-frontend"
   },
   "devDependencies": {},
   "dependencies": {
