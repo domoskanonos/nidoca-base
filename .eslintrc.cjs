@@ -12,7 +12,7 @@ module.exports = {
   plugins: ["@typescript-eslint", "eslint-plugin-tsdoc"],
   rules: {
     semi: ["error", "always"],
-    quotes: ["error", "double"],
+    quotes: ["error", "single"],
     "@typescript-eslint/no-inferrable-types": "off",
     "tsdoc/syntax": "error",
   },
