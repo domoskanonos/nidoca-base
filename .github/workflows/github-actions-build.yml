@@ -25,16 +25,14 @@ jobs:
     if: github.ref == 'refs/heads/main'
     steps:
       - uses: actions/checkout@v3
-        with:
-          token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
       - uses: actions/setup-node@v3
         with:
+          token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
       - run: git config --global user.name 'Dominik Bruhn'
       - run: git config --global user.email 'domoskanonos@googlemail.com'
       - run: npm version patch -m "[RELEASE] %s"
       - run: git push
       - run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
